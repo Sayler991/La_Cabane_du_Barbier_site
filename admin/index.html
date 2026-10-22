@@ -1,0 +1,24 @@
+<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>Admin — La cabane du barbier</title>
+<style>body{font:15px system-ui;background:#efe2c8;margin:0;color:#2a1a0f}header{background:#3e2716;color:#f4e9d4;padding:1rem}main{max-width:900px;margin:auto;padding:1rem}fieldset{background:#fff;border:1px solid #c9a26b;border-radius:6px;margin:.8rem 0}label{display:block;font-weight:600;margin-top:.5rem}input,textarea{width:100%;padding:.5rem;border:1px solid #aaa;border-radius:4px;font:inherit}textarea{min-height:80px}button{background:#b3241f;color:#fff;border:0;padding:.6rem 1rem;border-radius:4px;margin:.3rem .3rem 0 0;cursor:pointer}.row{border-left:3px solid #c9a26b;padding-left:.6rem;margin:.6rem 0}#msg{font-weight:700}</style></head><body>
+<header><b>La cabane du barbier</b> — administration</header><main>
+<section id="login"><h2>Connexion</h2><label>Identifiant<input id="u" value="admin"></label><label>Mot de passe<input id="p" type="password"></label><label>Jeton GitHub (Contents: read &amp; write) — mémorisé sur cet appareil<input id="t" type="password"></label><button id="go">Se connecter</button><p id="lm"></p></section>
+<section id="ed" hidden><p>Modifiez les champs puis cliquez « Publier ». Le site se met à jour en 1 à 2 minutes. Pour ajouter une photo : envoyez-la puis indiquez son chemin (img/…).</p><div id="form"></div>
+<fieldset><legend>Envoyer une photo</legend><input type="file" id="file" accept="image/*"><button id="up">Envoyer dans img/</button></fieldset>
+<button id="save">Publier</button> <span id="msg"></span></section></main>
+<script>
+const H="0371abdd9c5fa591197917a742d9f15854f950a0bfa575fa6273b3ec46e5d980",R="Sayler991/La_Cabane_du_Barbier_site",P="data/content.json",API="https://api.github.com/repos/"+R+"/contents/";
+let tok,sha,data;const $=i=>document.getElementById(i);$('t').value=localStorage.cbTok||'';
+async function h(s){const b=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(s));return [...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,'0')).join('')}
+const b64=s=>btoa(unescape(encodeURIComponent(s))),unb64=s=>decodeURIComponent(escape(atob(s.replace(/\n/g,''))));
+$('go').onclick=async()=>{if($('u').value!=='admin'||await h($('p').value)!==H){$('lm').textContent='Identifiants incorrects';return}
+tok=$('t').value.trim();const r=await fetch(API+P,{headers:{Authorization:'Bearer '+tok}});if(!r.ok){$('lm').textContent='Jeton GitHub refusé ('+r.status+')';return}
+localStorage.cbTok=tok;const j=await r.json();sha=j.sha;data=JSON.parse(unb64(j.content));$('login').hidden=true;$('ed').hidden=false;render()};
+function field(obj,k,path,box){const v=obj[k];if(Array.isArray(v)){const fs=document.createElement('fieldset');fs.innerHTML='<legend>'+k+'</legend>';v.forEach((it,i)=>{const d=document.createElement('div');d.className='row';
+Object.keys(it).forEach(kk=>field(it,kk,null,d));const del=document.createElement('button');del.textContent='Supprimer';del.onclick=()=>{v.splice(i,1);render()};d.append(del);fs.append(d)});
+const add=document.createElement('button');add.textContent='+ Ajouter';add.onclick=()=>{const n={};Object.keys(v[0]||{nom:''}).forEach(x=>n[x]='');v.push(n);render()};fs.append(add);box.append(fs);return}
+const l=document.createElement('label');l.textContent=k;const e=document.createElement(String(v).length>80?'textarea':'input');e.value=v;e.oninput=()=>obj[k]=e.value;l.append(e);box.append(l)}
+function render(){const f=$('form');f.innerHTML='';const g=document.createElement('fieldset');g.innerHTML='<legend>Général</legend>';f.append(g);Object.keys(data).forEach(k=>field(data,k,null,Array.isArray(data[k])?f:g))}
+async function put(path,content,s,msg){const r=await fetch(API+path,{method:'PUT',headers:{Authorization:'Bearer '+tok,'Content-Type':'application/json'},body:JSON.stringify({message:msg,content,sha:s||undefined})});if(!r.ok)throw new Error(r.status);return r.json()}
+$('save').onclick=async()=>{$('msg').textContent='Publication…';try{const j=await put(P,b64(JSON.stringify(data,null,2)),sha,'Mise à jour du contenu via admin');sha=j.content.sha;$('msg').textContent='✔ Publié'}catch(e){$('msg').textContent='Erreur '+e.message}};
+$('up').onclick=()=>{const f=$('file').files[0];if(!f)return;const rd=new FileReader();rd.onload=async()=>{const name='img/'+Date.now()+'-'+f.name.replace(/[^a-z0-9.]/gi,'_');try{await put(name,rd.result.split(',')[1],null,'Ajout photo');data.galerie.push({src:name,alt:''});render();$('msg').textContent='Photo envoyée : '+name+' (pensez à Publier)'}catch(e){$('msg').textContent='Erreur '+e.message}};rd.readAsDataURL(f)};
+</script></body></html>

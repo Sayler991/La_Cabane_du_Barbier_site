@@ -1,0 +1,13 @@
+(async()=>{const r=await fetch('data/content.json?t='+Date.now());const c=await r.json();
+const $=s=>document.querySelector(s),esc=s=>String(s??'').replace(/[&<>"]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]));
+document.querySelectorAll('[data-k]').forEach(e=>{if(c[e.dataset.k]!=null)e.textContent=c[e.dataset.k]});
+document.querySelectorAll('[data-tel]').forEach(e=>e.href='tel:'+c.telephone_lien);
+document.querySelectorAll('[data-fb]').forEach(e=>e.href=c.facebook);document.querySelectorAll('[data-ig]').forEach(e=>e.href=c.instagram);
+$('#services-list').innerHTML=c.services.map(s=>`<li><span>${esc(s.nom)}</span><i></i><b>${esc(s.prix)}</b></li>`).join('');
+$('#gal').innerHTML=c.galerie.map(g=>`<button class="ph" data-src="${esc(g.src)}"><img loading="lazy" src="${esc(g.src.replace('.webp','-sm.webp'))}" onerror="this.onerror=null;this.src='${esc(g.src)}'" alt="${esc(g.alt)}"></button>`).join('');
+$('#rev').innerHTML=c.avis.map(a=>`<blockquote><p>“${esc(a.texte)}”</p><cite>★★★★★ — ${esc(a.nom)}, avis Google</cite></blockquote>`).join('');
+const d=new Date().getDay(),order=[1,2,3,4,5,6,0];
+$('#hours').innerHTML=c.horaires.map((h,i)=>`<tr class="${order[i]===d?'today':''}"><th>${esc(h.jour)}</th><td>${esc(h.h)}</td></tr>`).join('');
+$('#y').textContent=new Date().getFullYear();
+const lb=$('#lb');$('#gal').onclick=e=>{const b=e.target.closest('.ph');if(!b)return;lb.querySelector('img').src=b.dataset.src;lb.hidden=false};
+lb.onclick=()=>lb.hidden=true;document.onkeydown=e=>{if(e.key==='Escape')lb.hidden=true};})();

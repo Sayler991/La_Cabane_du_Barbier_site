@@ -1,0 +1,126 @@
+{
+  "nom": "La cabane du barbier",
+  "slogan": "Barbier à l'ambiance vintage & rock — Lesdain",
+  "telephone": "06 85 75 06 38",
+  "telephone_lien": "+33685750638",
+  "adresse": "5 Rue de la Font Bossue, 59258 Lesdain, France",
+  "facebook": "https://www.facebook.com/La-cabane-du-barbier-1717885311573861/",
+  "instagram": "https://www.instagram.com/lacabanedubarbier/",
+  "note_google": "5,0",
+  "nb_avis": "187",
+  "reservation": "Appelez pour réserver",
+  "apropos": "Bienvenue à La cabane du barbier, à Lesdain. Un salon à l'ambiance vintage, entre bois, fauteuils de barbier rouges et objets chinés, où l'on prend le temps de vous conseiller. La cabane, c'est aussi un barber truck : un barbier ambulant que l'on retrouve sur des événements, notamment rock.",
+  "services": [
+    {
+      "nom": "Coupe homme",
+      "prix": "Sur demande"
+    },
+    {
+      "nom": "Taille et entretien de barbe",
+      "prix": "Sur demande"
+    },
+    {
+      "nom": "Coupe + barbe",
+      "prix": "Sur demande"
+    },
+    {
+      "nom": "Barbier ambulant / barber truck pour événements",
+      "prix": "Sur demande"
+    }
+  ],
+  "note_services": "Tarifs à confirmer par téléphone au 06 85 75 06 38.",
+  "horaires": [
+    {
+      "jour": "Lundi",
+      "h": "Fermé"
+    },
+    {
+      "jour": "Mardi",
+      "h": "09:00–12:00 · 13:00–19:00"
+    },
+    {
+      "jour": "Mercredi",
+      "h": "09:00–12:00 · 13:00–19:00"
+    },
+    {
+      "jour": "Jeudi",
+      "h": "09:00–12:00 · 13:00–19:00"
+    },
+    {
+      "jour": "Vendredi",
+      "h": "09:00–12:00 · 13:00–19:00"
+    },
+    {
+      "jour": "Samedi",
+      "h": "09:00–12:00 · 13:00–19:00"
+    },
+    {
+      "jour": "Dimanche",
+      "h": "Fermé"
+    }
+  ],
+  "avis": [
+    {
+      "nom": "Christopher",
+      "texte": "Un super barbier je recommande à 100% sait conseiller sur ce qu’il vous faut très content du résultat final"
+    },
+    {
+      "nom": "Alexis",
+      "texte": "Je recommande vivement la Cabane du barbier à toute personne qui recherche sérieux et professionnalisme, une ambiance au top et une coupe qui tient ses promesses ! Vous pouvez y aller les yeux fermés merci à toi à bientôt"
+    },
+    {
+      "nom": "Arnaud",
+      "texte": "Plusieurs fois que je me fair couper cheveux et barbe chez lui et rien a dire il travaille formidablement bien accueillant et chaleureux ont passe un bon moment !"
+    },
+    {
+      "nom": "David",
+      "texte": "Un portugais au top , ambiance agréable et chaleureuse, je conseille fortement."
+    },
+    {
+      "nom": "Nael",
+      "texte": "Déjà plusieurs fois que j'y vais et je n'est jamais était dessus, une ambiance t'es chaleureuse et conviviale je recommande à tous"
+    }
+  ],
+  "galerie": [
+    {
+      "src": "img/salon-fauteuil-rouge.webp",
+      "alt": "Le fauteuil de barbier rouge dans la cabane"
+    },
+    {
+      "src": "img/equipe-cabane.webp",
+      "alt": "Le barbier et un client dans le salon"
+    },
+    {
+      "src": "img/salon-coupe.webp",
+      "alt": "Coupe en cours dans la cabane"
+    },
+    {
+      "src": "img/enseigne-cabane.webp",
+      "alt": "L'enseigne La Cabane du Barbier"
+    },
+    {
+      "src": "img/barber-truck.webp",
+      "alt": "Le barber truck"
+    },
+    {
+      "src": "img/salon-fauteuil.webp",
+      "alt": "Intérieur vintage du salon"
+    },
+    {
+      "src": "img/barbier.webp",
+      "alt": "Le barbier"
+    },
+    {
+      "src": "img/client-1.webp",
+      "alt": "Client et jeune client"
+    },
+    {
+      "src": "img/client-2.webp",
+      "alt": "Clients satisfaits"
+    },
+    {
+      "src": "img/jeune-client.webp",
+      "alt": "Jeune client après sa coupe"
+    }
+  ]
+}
