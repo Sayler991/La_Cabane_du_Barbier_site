@@ -84,7 +84,7 @@
   "galerie": [
     {
       "src": "img/salon-fauteuil-rouge.webp",
-      "alt": "Le fauteuil de barbier rouge dans la cabane"
+      "alt": "Coupe en cours dans la cabane"
     },
     {
       "src": "img/equipe-cabane.webp",
@@ -92,15 +92,15 @@
     },
     {
       "src": "img/salon-coupe.webp",
-      "alt": "Coupe en cours dans la cabane"
+      "alt": "Jeune client avec le barbier"
     },
     {
       "src": "img/enseigne-cabane.webp",
-      "alt": "L'enseigne La Cabane du Barbier"
+      "alt": "Le fauteuil de barbier rouge vintage"
     },
     {
       "src": "img/barber-truck.webp",
-      "alt": "Le barber truck"
+      "alt": "L'enseigne La Cabane du Barbier (barber truck)"
     },
     {
       "src": "img/salon-fauteuil.webp",
@@ -120,7 +120,7 @@
     },
     {
       "src": "img/jeune-client.webp",
-      "alt": "Jeune client après sa coupe"
+      "alt": "Le barber truck"
     }
   ]
 }
