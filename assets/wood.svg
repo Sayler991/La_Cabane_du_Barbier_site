@@ -1,11 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="480" height="360" viewBox="0 0 480 360">
-<defs><filter id="g" x="0" y="0"><feTurbulence type="fractalNoise" baseFrequency="0.004 0.12" numOctaves="3" seed="7"/><feColorMatrix values="0 0 0 0 0.12  0 0 0 0 0.06  0 0 0 0 0.02  0 0 0 0.9 -0.35"/></filter>
+<defs><filter id="g" x="0" y="0"><feTurbulence type="fractalNoise" baseFrequency="0.004 0.12" numOctaves="3" seed="7"/><feColorMatrix values="0 0 0 0 0.12  0 0 0 0 0.06  0 0 0 0 0.02  0 0 0 1.6 -0.45"/></filter>
 <radialGradient id="k"><stop offset="0" stop-color="#2a170b" stop-opacity=".85"/><stop offset=".45" stop-color="#3e2414" stop-opacity=".5"/><stop offset="1" stop-color="#3e2414" stop-opacity="0"/></radialGradient>
 <radialGradient id="n"><stop offset="0" stop-color="#d8c3a0"/><stop offset=".5" stop-color="#6b5640"/><stop offset="1" stop-color="#1b120b"/></radialGradient></defs>
 <rect width="480" height="360" filter="url(#g)"/>
 <g fill="none" stroke="#2a170b" stroke-opacity=".35"><ellipse cx="90" cy="70" rx="16" ry="7"/><ellipse cx="90" cy="70" rx="26" ry="12"/><ellipse cx="90" cy="70" rx="38" ry="17" stroke-opacity=".18"/><ellipse cx="330" cy="250" rx="12" ry="6"/><ellipse cx="330" cy="250" rx="22" ry="10"/><ellipse cx="330" cy="250" rx="34" ry="15" stroke-opacity=".18"/></g>
 <ellipse cx="90" cy="70" rx="9" ry="4" fill="url(#k)"/><ellipse cx="330" cy="250" rx="8" ry="4" fill="url(#k)"/>
-<g stroke="#120a05" stroke-opacity=".55" stroke-width="3"><line x1="0" y1="1" x2="480" y2="1"/><line x1="0" y1="180" x2="480" y2="180"/><line x1="160" y1="0" x2="160" y2="180"/><line x1="400" y1="180" x2="400" y2="360"/></g>
+<g stroke="#120a05" stroke-opacity=".7" stroke-width="4"><line x1="0" y1="1" x2="480" y2="1"/><line x1="0" y1="180" x2="480" y2="180"/><line x1="160" y1="0" x2="160" y2="180"/><line x1="400" y1="180" x2="400" y2="360"/></g>
 <g stroke="#e9c99a" stroke-opacity=".12" stroke-width="1"><line x1="0" y1="4" x2="480" y2="4"/><line x1="0" y1="183" x2="480" y2="183"/></g>
-<g fill="url(#n)"><circle cx="150" cy="12" r="3.2"/><circle cx="170" cy="12" r="3.2"/><circle cx="150" cy="168" r="3.2"/><circle cx="170" cy="168" r="3.2"/><circle cx="390" cy="192" r="3.2"/><circle cx="410" cy="192" r="3.2"/><circle cx="390" cy="348" r="3.2"/><circle cx="410" cy="348" r="3.2"/></g>
+<g fill="url(#n)"><circle cx="150" cy="12" r="4"/><circle cx="170" cy="12" r="4"/><circle cx="150" cy="168" r="4"/><circle cx="170" cy="168" r="4"/><circle cx="390" cy="192" r="4"/><circle cx="410" cy="192" r="4"/><circle cx="390" cy="348" r="4"/><circle cx="410" cy="348" r="4"/></g>
 </svg>

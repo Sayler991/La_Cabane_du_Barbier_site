@@ -39,15 +39,14 @@ footer{background:#1e120a;color:var(--cream);text-align:center;padding:2rem 1rem
 .fab{position:fixed;right:16px;bottom:16px;width:60px;height:60px;border-radius:50%;background:var(--red);display:grid;place-items:center;font-size:1.6rem;text-decoration:none;box-shadow:0 6px 18px #000a;z-index:30;border:3px solid #fff}
 @media(min-width:800px){.fab{display:none}}
 /* === v2 : fonds enrichis === */
-.wood{position:relative;isolation:isolate;background:radial-gradient(ellipse 60% 45% at 50% 0,#ffc97a40,transparent 70%),radial-gradient(ellipse at center,transparent 55%,#120a0599 100%),url(wood.svg?v=2) 0 0/480px 360px,linear-gradient(90deg,var(--wood1),var(--wood3) 30%,var(--wood1) 55%,var(--wood3) 80%,var(--wood1));overflow:hidden}
-.wood:before{content:"";position:absolute;inset:-60px;z-index:-1;background:url(motifs.svg?v=2) 0 0/560px;opacity:.09;animation:drift 90s linear infinite}
+.wood{position:relative;isolation:isolate;background:radial-gradient(ellipse 60% 45% at 50% 0,#ffc97a40,transparent 70%),radial-gradient(ellipse at center,transparent 55%,#120a0599 100%),url(wood.svg?v=3) 0 0/480px 360px,linear-gradient(90deg,var(--wood1),var(--wood3) 30%,var(--wood1) 55%,var(--wood3) 80%,var(--wood1));overflow:hidden}
+.wood:before{content:"";position:absolute;inset:-60px;z-index:-1;background:url(motifs.svg?v=3) 0 0/560px;opacity:.09;animation:drift 90s linear infinite}
 @keyframes drift{to{background-position:560px 560px}}
 .wood:after{content:"";position:absolute;left:50%;top:-40px;width:520px;height:340px;transform:translateX(-50%);z-index:-1;background:radial-gradient(#ffd99055,transparent 65%);animation:lamp 6s ease-in-out infinite alternate;pointer-events:none}
 @keyframes lamp{from{opacity:.65}to{opacity:1}}
-@media(min-width:900px){.wood{background-attachment:scroll,scroll,fixed,scroll}}
 @media(prefers-reduced-motion:reduce){.wood:before,.wood:after{animation:none}}
 .paper{position:relative;isolation:isolate;overflow:hidden;background:radial-gradient(ellipse at center,transparent 50%,#7a523540 100%),repeating-linear-gradient(0deg,#7a52350a 0 1px,transparent 1px 4px),var(--paper)}
-.paper:before{content:"";position:absolute;inset:0;z-index:-1;background:url(motifs.svg?v=2) 120px 40px/480px;filter:invert(.75) sepia(1) saturate(2) hue-rotate(-20deg);opacity:.08}
+.paper:before{content:"";position:absolute;inset:0;z-index:-1;background:url(motifs.svg?v=3) 120px 40px/480px;filter:invert(.75) sepia(1) saturate(2) hue-rotate(-20deg);opacity:.08}
 .card{position:relative;background:linear-gradient(#fffaf0aa,#f4e9d4),var(--cream)}
 .card:before,.card:after{content:"❦";position:absolute;top:8px;left:14px;color:var(--gold);font-size:1.4rem}.card:after{left:auto;right:14px;transform:scaleX(-1)}
 #apropos .card{margin-top:3rem}
